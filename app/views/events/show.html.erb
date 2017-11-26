@@ -1,0 +1,19 @@
+<div>
+  <h1><%= @event.title %></h1>
+  <p><%= @event.content %></p>
+  <%= @event.term %>
+  <%= @event.pick %>  
+</div>
+<% if current_user == @event.user %>
+  <%= link_to "Edit", edit_event_path(@event), class: "btn btn-primary btn-xs" %>
+  <%= link_to "Delete", event_path(@event), method: "delete", data: {message: "Are you sure ?"}, class: "btn btn-danger btn-xs" %> 
+<% else %>
+  <div>
+    <%= link_to "参加する", root_url,  class: "btn btn-success btn-sm" %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to '一覧へ戻る', events_path, class: "btn btn-default btn-sm" %>
+</div>
+

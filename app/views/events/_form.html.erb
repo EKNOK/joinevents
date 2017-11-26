@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(event) do |f| %>
+      <div class="form-group">
+        <%= f.label :title, 'Title' %>
+        <%= f.text_field :title, class: 'form-control', placeholder: "タイトルを入力してください" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, 'Content' %>
+        <%= f.text_area :content, class: 'form-control', placeholder: "コンテンツを入力してください" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :pick, 'Pick' %>
+        <%= f.select :pick, [["先着", "first"], ["抽選", "lottery"]], class: 'form-control bootstrap-date-only-width' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :term, 'Term' %>
+        <%= f.datetime_select :term, class: 'form-control' %>
+      </div>
+      <%= f.submit word, class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

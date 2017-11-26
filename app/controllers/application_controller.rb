@@ -11,4 +11,13 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def correct_user
+    @event = current_user.events.find_by(id: params[:id])
+    unless @event
+      flash[:danger] = "権限がありません"
+      redirect_to root_url
+    
+    end
+  end
+  
 end
