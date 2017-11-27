@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user, only: [:edit, :destroy, :update]
+  before_action :join_user_connect, only: [:join]
+  
   
   
   def new
