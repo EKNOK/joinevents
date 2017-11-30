@@ -1,0 +1,2 @@
+class Go < Join
+end

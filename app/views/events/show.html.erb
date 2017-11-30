@@ -9,9 +9,10 @@
   <%= link_to "Delete", event_path(@event), method: "delete", data: {message: "Are you sure ?"}, class: "btn btn-danger btn-xs" %> 
 <% else %>
   <div>
-    <%= link_to "参加する", root_url,  class: "btn btn-success btn-sm" %>
+    <%= render 'joins/go_button', event: @event %>
   </div>
 <% end %>
+
 
 <div>
   <%= link_to '一覧へ戻る', events_path, class: "btn btn-default btn-sm" %>

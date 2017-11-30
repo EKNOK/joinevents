@@ -7,5 +7,10 @@ class Event < ApplicationRecord
   validates :pick, presence: true
   # validates :term, presence: true
   validates :user_id, presence: true
+  
+  has_many :joins
+  has_many :users, through: :ownerships
+  has_many :goes
+  has_many :go_users, through: :goes, class_name: 'User', source: :user
 end
 

@@ -1,0 +1,13 @@
+<% if current_user.go?(event) %>
+  <%= form_tag(join_path(event.id), method: 'delete') do  %>
+    <%= hidden_field_tag :event_id, event.id %>
+    <%= hidden_field_tag :type, "Go" %>
+    <%= submit_tag 'キャンセル', class: 'btn btn-success', data: {messege: "日程、内容をよく読んで参加してください。\n 参加しますか？ "} %>
+  <% end %>
+<% else %>
+  <%= form_tag(joins_path) do %>
+    <%= hidden_field_tag :event_id, event.id %>
+    <%= hidden_field_tag :type, 'Go' %>
+    <%= submit_tag '参加する', class: 'btn btn-primary', data: {message: "本当にキャンセルしますか？"} %>
+  <% end %>
+<% end %>

@@ -1,9 +1,9 @@
-<ul class="media-list">
+<ul class="media-list col-sm-8">
   <% events.each do |event| %>
     <% user = event.user %>
     <li class="media">
       <div class="media-left">
-        <img class="media-object img-rounded" src="<%= gravatar_url(user, options = { size: 50 }) %>" alt="">
+        <img class="media-object img-rounded" src="<%= gravatar_url(user, options = { size: 100 }) %>" alt="">
       </div>
       <div class="media-body">
         <div>
